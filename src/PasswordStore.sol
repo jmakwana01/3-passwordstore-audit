@@ -23,6 +23,10 @@ contract PasswordStore {
      * @notice This function allows only the owner to set a new password.
      * @param newPassword The new password to set.
      */
+
+    //q - this function is not protected by a modifier
+
+    // @audit - this function is not protected by a modifier any user can call this function and change the password
     function setPassword(string memory newPassword) external {
         s_password = newPassword;
         emit SetNetPassword();
